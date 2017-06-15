@@ -11,7 +11,7 @@ namespace TddbcCSharp.Vending
 			_name = name;
 		}
 
-		public string name 
+		public string Name
 		{
 			get { return this._name; }
 		}
