@@ -2,13 +2,13 @@ using System;
 
 namespace TddbcCSharp.Vending
 {
-	public class Drink
+	public class DrinkKind
 	{
 
 		private string _name;
 		private int _stockCount;
 
-		public Drink (string name, int price, int stockCount)	{
+		public DrinkKind (string name, int price, int stockCount)	{
 			_name = name;
 			_stockCount = stockCount;
 		}

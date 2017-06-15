@@ -6,7 +6,7 @@ namespace TddbcCSharp.Vending
 	public class VendingMachine
 	{
 
-		List<Drink> _drinkKinds = new List<Drink>();
+		List<DrinkKind> _drinkKinds = new List<DrinkKind>();
 
 		public VendingMachine ()
 		{
@@ -17,14 +17,14 @@ namespace TddbcCSharp.Vending
 			return _drinkKinds.Count;
 		}
 
-		public void AddDrinkKind(Drink drink)
+		public void AddDrinkKind(DrinkKind drink)
 		{
 			_drinkKinds.Add (drink);
 		}
 
-		public List<Drink> AllDrinkKinds ()
+		public List<DrinkKind> AllDrinkKinds ()
 		{
-			return new List<Drink>(_drinkKinds);
+			return new List<DrinkKind>(_drinkKinds);
 		}
 	}
 }
