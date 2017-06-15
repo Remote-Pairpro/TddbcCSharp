@@ -8,7 +8,7 @@ namespace TddbcCSharp.Vending
 
 		List<DrinkKind> _drinkKinds = new List<DrinkKind>();
 
-		public VendingMachine ()
+		public VendingMachine()
 		{
 		}
 
@@ -19,10 +19,10 @@ namespace TddbcCSharp.Vending
 
 		public void AddDrinkKind(DrinkKind drink)
 		{
-			_drinkKinds.Add (drink);
+			_drinkKinds.Add(drink);
 		}
 
-		public List<DrinkKind> AllDrinkKinds ()
+		public List<DrinkKind> AllDrinkKinds()
 		{
 			return new List<DrinkKind>(_drinkKinds);
 		}
