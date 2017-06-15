@@ -16,6 +16,11 @@ namespace TddbcCSharp.Vending
 			get { return this._name; }
 		}
 
+		public int StockCount
+		{
+			get {return 0;}
+		}
+
 	}
 
 }

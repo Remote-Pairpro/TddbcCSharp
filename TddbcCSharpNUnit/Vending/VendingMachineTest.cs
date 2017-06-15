@@ -41,5 +41,18 @@ namespace TddbcCSharpNUnit
 			Assert.AreEqual ("コーラ", actual.Name);
 		}
 
+		[Test ()]
+		public void 格納されているジュースの在庫数を取得できる ()
+		{
+			// 準備
+			Drink drink = new Drink ("コーラ", 120, 5);
+			_sut.AddDrinkKind (drink);
+			// 実行
+			List<Drink> kinds = _sut.AllDrinkKinds();
+			// 確認
+			Drink actual = kinds[0];
+			Assert.AreEqual (5, actual.StockCount);
+		}
+
 	}
 }
