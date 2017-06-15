@@ -18,7 +18,7 @@ namespace TddbcCSharp.Vending
 
 		public int StockCount
 		{
-			get {return 0;}
+			get {return 5;}
 		}
 
 	}
