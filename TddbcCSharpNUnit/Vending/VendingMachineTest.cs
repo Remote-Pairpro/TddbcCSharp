@@ -38,7 +38,7 @@ namespace TddbcCSharpNUnit
 			List<Drink> kinds = _sut.AllDrinkKinds();
 			// 確認
 			Drink actual = kinds[0];
-			Assert.AreEqual ("コーラ", actual.name);
+			Assert.AreEqual ("コーラ", actual.Name);
 		}
 
 	}
