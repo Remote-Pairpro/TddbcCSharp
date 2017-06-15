@@ -6,9 +6,11 @@ namespace TddbcCSharp.Vending
 	{
 
 		private string _name;
+		private int _stockCount;
 
 		public Drink (string name, int price, int stockCount)	{
 			_name = name;
+			_stockCount = stockCount;
 		}
 
 		public string Name
@@ -18,7 +20,7 @@ namespace TddbcCSharp.Vending
 
 		public int StockCount
 		{
-			get {return 5;}
+			get {return _stockCount;}
 		}
 
 	}
