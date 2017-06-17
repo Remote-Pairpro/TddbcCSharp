@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TddbcCSharp", "TddbcCSharp\TddbcCSharp.csproj", "{1BB1593B-0104-4180-901B-D98F61F65A8E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine", "VendingMachine\VendingMachine.csproj", "{1BB1593B-0104-4180-901B-D98F61F65A8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TddbcCSharpNUnit", "TddbcCSharpNUnit\TddbcCSharpNUnit.csproj", "{DDA730E7-B239-4578-8462-4FA56F734AC1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachineTest", "VendingMachineTest\VendingMachineTest.csproj", "{DDA730E7-B239-4578-8462-4FA56F734AC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
