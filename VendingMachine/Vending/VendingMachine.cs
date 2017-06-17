@@ -20,7 +20,7 @@ namespace TddbcCSharp.Vending
 
 		public void Insert(int amount)
 		{
-			_totalAmount = amount;
+			_totalAmount += amount;
 		}
 
 		public void ClearStocks()
