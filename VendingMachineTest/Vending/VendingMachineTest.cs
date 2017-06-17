@@ -45,14 +45,25 @@ namespace TddbcCSharpNUnit
 		}
 
 		[Test()]
-		public void 払い戻しができて総計は0円となる()
+		public void 払い戻しで現在の総計が帰ってくる()
 		{
 			// 準備
+			_sut.Insert(10);
 			_sut.Insert(10);
 			// 実行
 			int actual  =_sut.PayBack();
 			// 確認
-			Assert.AreEqual(10, actual);
+			Assert.AreEqual(20, actual);
+		}
+
+		[Test()]
+		public void 払い戻しを行うと総計が0になる()
+		{
+			// 準備
+			_sut.Insert(10);
+			// 実行
+			_sut.PayBack();
+			// 確認
 			Assert.AreEqual(0, _sut.TotalAmount);
 		}
 
