@@ -25,8 +25,9 @@ namespace TddbcCSharp.Vending
 
 		public int PayBack()
 		{
+			int lastTotal = _totalAmount;
 			_totalAmount = 0;
-			return 10;
+			return lastTotal;;
 		}
 
 		public void ClearStocks()
