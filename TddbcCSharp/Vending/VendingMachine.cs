@@ -29,7 +29,7 @@ namespace TddbcCSharp.Vending
 
 		public int GetStockCount(DrinkKind drinks)
 		{
-			return 5;
+			return _drinkKinds[drinks];
 		}
 	}
 }
