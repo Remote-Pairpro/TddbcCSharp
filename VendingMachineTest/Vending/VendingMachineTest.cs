@@ -81,6 +81,26 @@ namespace TddbcCSharpNUnit
 		}
 
 		[Test()]
+		public void 硬貨を混ぜた複数回投入が出来て総合計が確認できる()
+		{
+			// 準備
+			_sut.Insert(10);
+			_sut.Insert(50);
+			_sut.Insert(100);
+			_sut.Insert(500);
+			_sut.Insert(1000);
+			_sut.Insert(10);
+			_sut.Insert(50);
+			_sut.Insert(100);
+			_sut.Insert(500);
+			_sut.Insert(1000);
+			// 実行
+			int actual = _sut.TotalAmount;
+			// 確認
+			Assert.AreEqual(3320, actual);
+		}
+
+		[Test()]
 		public void 払い戻しで現在の総計が帰ってくる()
 		{
 			// 準備
