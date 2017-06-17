@@ -23,6 +23,11 @@ namespace TddbcCSharp.Vending
 			_totalAmount += amount;
 		}
 
+		public int PayBack()
+		{
+			throw new NotImplementedException();
+		}
+
 		public void ClearStocks()
 		{
 			_drinkKindAndStocks.Clear();
