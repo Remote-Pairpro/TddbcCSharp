@@ -1,6 +1,4 @@
 ﻿using NUnit.Framework;
-using System;
-using TddbcCSharp.Vending;
 using System.Collections.Generic;
 
 namespace TddbcCSharp.Vending
