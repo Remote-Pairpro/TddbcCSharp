@@ -6,6 +6,7 @@ namespace TddbcCSharp.Vending
 	public class VendingMachine
 	{
 
+		int _totalAmount = 0;
 		DrinkKindAndStocks _drinkKindAndStocks;
 
 		public VendingMachine()
@@ -14,12 +15,12 @@ namespace TddbcCSharp.Vending
 		}
 
 		public int TotalAmount {
-			get { return 0; }
+			get { return _totalAmount; }
 		}
 
-		public void Insert(int i)
+		public void Insert(int amount)
 		{
-			throw new NotImplementedException();
+			_totalAmount = amount;
 		}
 
 		public void ClearStocks()
