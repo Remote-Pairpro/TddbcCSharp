@@ -10,11 +10,11 @@ namespace TddbcCSharp.Vending
 
 		public DrinkKindAndStocks()
 		{
-			_drinkKindAndStocks = new Dictionary<DrinkKind , int>();
 			initStock();
 		}
 
 		private void initStock() {
+			_drinkKindAndStocks = new Dictionary<DrinkKind , int>();
 			AddDrinkKind(new DrinkKind("コーラ", 120), 5);
 		}
 
