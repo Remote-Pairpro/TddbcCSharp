@@ -1,36 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine", "VendingMachine\VendingMachine.csproj", "{1BB1593B-0104-4180-901B-D98F61F65A8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachineUnitTest", "VendingMachineUnitTest\VendingMachineUnitTest.csproj", "{2E43A3FC-BAAC-4239-8EF4-B5014B4BF3CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachineTest", "VendingMachineTest\VendingMachineTest.csproj", "{DDA730E7-B239-4578-8462-4FA56F734AC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
 		Debug|x86 = Debug|x86
-		Release|Any CPU = Release|Any CPU
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1BB1593B-0104-4180-901B-D98F61F65A8E}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{1BB1593B-0104-4180-901B-D98F61F65A8E}.Debug|x86.ActiveCfg = Debug|x86
 		{1BB1593B-0104-4180-901B-D98F61F65A8E}.Debug|x86.Build.0 = Debug|x86
-		{1BB1593B-0104-4180-901B-D98F61F65A8E}.Release|Any CPU.ActiveCfg = Release|x86
 		{1BB1593B-0104-4180-901B-D98F61F65A8E}.Release|x86.ActiveCfg = Release|x86
 		{1BB1593B-0104-4180-901B-D98F61F65A8E}.Release|x86.Build.0 = Release|x86
-		{2E43A3FC-BAAC-4239-8EF4-B5014B4BF3CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E43A3FC-BAAC-4239-8EF4-B5014B4BF3CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E43A3FC-BAAC-4239-8EF4-B5014B4BF3CE}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{2E43A3FC-BAAC-4239-8EF4-B5014B4BF3CE}.Debug|x86.Build.0 = Debug|Any CPU
-		{2E43A3FC-BAAC-4239-8EF4-B5014B4BF3CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E43A3FC-BAAC-4239-8EF4-B5014B4BF3CE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2E43A3FC-BAAC-4239-8EF4-B5014B4BF3CE}.Release|x86.ActiveCfg = Release|Any CPU
-		{2E43A3FC-BAAC-4239-8EF4-B5014B4BF3CE}.Release|x86.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
+		{DDA730E7-B239-4578-8462-4FA56F734AC1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DDA730E7-B239-4578-8462-4FA56F734AC1}.Debug|x86.Build.0 = Debug|Any CPU
+		{DDA730E7-B239-4578-8462-4FA56F734AC1}.Release|x86.ActiveCfg = Release|Any CPU
+		{DDA730E7-B239-4578-8462-4FA56F734AC1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
