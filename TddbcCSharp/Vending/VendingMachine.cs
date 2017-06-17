@@ -6,10 +6,11 @@ namespace TddbcCSharp.Vending
 	public class VendingMachine
 	{
 
-		Dictionary<DrinkKind , int> _drinkKindAndStocks = new Dictionary<DrinkKind , int>();
+		Dictionary<DrinkKind , int> _drinkKindAndStocks;
 
 		public VendingMachine()
 		{
+			_drinkKindAndStocks = new Dictionary<DrinkKind , int>();
 		}
 
 		public int CountKinds()
