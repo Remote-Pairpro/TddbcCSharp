@@ -48,7 +48,7 @@ namespace TddbcCSharpNUnit
 			DrinkKind drink = new DrinkKind("コーラ", 120);
 			_sut.AddDrinkKind(drink, 5);
 			// 実行
-			int actual = _sut.GetStockCount(drink);
+			int actual = _sut.CountStockOf(drink);
 			// 確認
 			Assert.AreEqual(5, actual);
 		}
