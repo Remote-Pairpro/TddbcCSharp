@@ -3,7 +3,7 @@ using System;
 using TddbcCSharp.Vending;
 using System.Collections.Generic;
 
-namespace TddbcCSharpNUnit
+namespace TddbcCSharp.Vending
 {
 	[TestFixture()]
 	public class VendingMachineTest
