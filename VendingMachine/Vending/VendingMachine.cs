@@ -15,7 +15,7 @@ namespace TddbcCSharp.Vending
 
 		public int TotalAmount()
 		{
-			throw new NotImplementedException();
+			return 0;
 		}
 
 		public void ClearStocks() {
