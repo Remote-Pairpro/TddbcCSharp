@@ -20,7 +20,8 @@ namespace TddbcCSharpNUnit
 		// ---- Step0 ----
 
 		[Test()]
-		public void 未投入の場合は投入金額の総計が０である() {
+		public void 未投入の場合は投入金額の総計が０である()
+		{
 			Assert.AreEqual(0, _sut.TotalAmount);
 		}
 
@@ -85,7 +86,7 @@ namespace TddbcCSharpNUnit
 			// 実行
 			List<DrinkKind> actual = _sut.AllDrinkKinds();
 			// 確認
-			Assert.AreEqual(1 , actual.Count);
+			Assert.AreEqual(1, actual.Count);
 		}
 
 		[Test()]
@@ -114,7 +115,7 @@ namespace TddbcCSharpNUnit
 			List<DrinkKind> kinds = _sut.AllDrinkKinds();
 			DrinkKind drinkKind = kinds[0];
 			// 実行
-			int actual =   _sut.CountStockOf(drinkKind);
+			int actual = _sut.CountStockOf(drinkKind);
 			// 確認
 			Assert.AreEqual(5, actual);
 		}
