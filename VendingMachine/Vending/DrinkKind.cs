@@ -9,14 +9,20 @@ namespace TddbcCSharp.Vending
 	{
 
 		private string _name;
+		private int _price;
 
 		public DrinkKind(string name, int price)
 		{
 			_name = name;
+			_price = price;
 		}
 
 		public string Name {
 			get { return this._name; }
+		}
+
+		public int Price {
+			get { return _price; }
 		}
 
 		public override bool Equals(Object other)

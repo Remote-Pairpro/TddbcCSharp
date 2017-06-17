@@ -42,6 +42,19 @@ namespace TddbcCSharpNUnit
 		}
 
 		[Test()]
+		public void 格納されているジュースの価格が取得できる()
+		{
+			// 準備
+			DrinkKind drink = new DrinkKind("コーラ", 120);
+			_sut.AddDrinkKind(drink, 5);
+			// 実行
+			List<DrinkKind> kinds = _sut.AllDrinkKinds();
+			// 確認
+			DrinkKind actual = kinds[0];
+			Assert.AreEqual(120, actual.Price);
+		}
+
+		[Test()]
 		public void 格納されているジュースの在庫数を取得できる()
 		{
 			// 準備
