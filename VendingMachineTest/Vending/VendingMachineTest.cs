@@ -62,6 +62,15 @@ namespace TddbcCSharpNUnit
 		}
 
 		[Test()]
+		public void 千投入すると総計が千円となる()
+		{
+			// 実行
+			_sut.Insert(1000);
+			// 確認
+			Assert.AreEqual(1000, _sut.TotalAmount);
+		}
+
+		[Test()]
 		public void 複数回投入すると総計が取得できる()
 		{
 			// 実行
