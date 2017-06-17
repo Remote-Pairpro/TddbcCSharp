@@ -17,6 +17,11 @@ namespace TddbcCSharp.Vending
 			get { return 0; }
 		}
 
+		public void Insert(int i)
+		{
+			throw new NotImplementedException();
+		}
+
 		public void ClearStocks()
 		{
 			_drinkKindAndStocks.Clear();

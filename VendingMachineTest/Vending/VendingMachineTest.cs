@@ -25,6 +25,15 @@ namespace TddbcCSharpNUnit
 			Assert.AreEqual(0, _sut.TotalAmount);
 		}
 
+		[Test()]
+		public void 十円投入すると総計が十円となる()
+		{
+			// 実行
+			_sut.Insert(10);
+			// 確認
+			Assert.AreEqual(10, _sut.TotalAmount);
+		}
+
 		// ---- Step2 ----
 
 		[Test()]
