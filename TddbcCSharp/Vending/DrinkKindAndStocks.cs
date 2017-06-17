@@ -28,9 +28,9 @@ namespace TddbcCSharp.Vending
 			return new List<DrinkKind>(_drinkKindAndStocks.Keys);
 		}
 
-		public int GetStockCount(DrinkKind drinks)
+		public int CountStockOf(DrinkKind drinkKind)
 		{
-			return _drinkKindAndStocks[drinks];
+			return _drinkKindAndStocks[drinkKind];
 		}
 	}
 }

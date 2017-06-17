@@ -28,9 +28,9 @@ namespace TddbcCSharp.Vending
 			return _drinkKindAndStocks.AllDrinkKinds();
 		}
 
-		public int GetStockCount(DrinkKind drinkKind)
+		public int CountStockOf(DrinkKind drinkKind)
 		{
-			return _drinkKindAndStocks.GetStockCount(drinkKind);
+			return _drinkKindAndStocks.CountStockOf(drinkKind);
 		}
 	}
 }
