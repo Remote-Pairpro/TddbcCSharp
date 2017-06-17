@@ -90,6 +90,16 @@ namespace TddbcCSharpNUnit
 		}
 
 		[Test()]
+		public void 初期状態で120円の飲み物を格納している()
+		{
+			// 実行
+			List<DrinkKind> kinds = _sut.AllDrinkKinds();
+			// 確認
+			DrinkKind actual = kinds[0];
+			Assert.AreEqual(120, actual.Price);
+		}
+
+		[Test()]
 		public void 初期状態で在庫を5本格納している()
 		{
 			List<DrinkKind> kinds = _sut.AllDrinkKinds();
