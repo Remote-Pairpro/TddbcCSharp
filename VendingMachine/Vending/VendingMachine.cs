@@ -25,7 +25,8 @@ namespace TddbcCSharp.Vending
 
 		public int PayBack()
 		{
-			throw new NotImplementedException();
+			_totalAmount = 0;
+			return 10;
 		}
 
 		public void ClearStocks()
