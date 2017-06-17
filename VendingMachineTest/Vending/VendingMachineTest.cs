@@ -21,6 +21,7 @@ namespace TddbcCSharpNUnit
 		public void ジュースを一種類格納できる()
 		{
 			// 準備
+			_sut.ClearStocks();
 			DrinkKind drink = new DrinkKind("コーラ", 120);
 			// 実行
 			_sut.AddDrinkKind(drink, 5);
@@ -32,6 +33,7 @@ namespace TddbcCSharpNUnit
 		public void 格納されているジュースを取得できる()
 		{
 			// 準備
+			_sut.ClearStocks();
 			DrinkKind drink = new DrinkKind("コーラ", 120);
 			_sut.AddDrinkKind(drink, 5);
 			// 実行
@@ -45,6 +47,7 @@ namespace TddbcCSharpNUnit
 		public void 格納されているジュースの価格が取得できる()
 		{
 			// 準備
+			_sut.ClearStocks();
 			DrinkKind drink = new DrinkKind("コーラ", 120);
 			_sut.AddDrinkKind(drink, 5);
 			// 実行
@@ -58,12 +61,23 @@ namespace TddbcCSharpNUnit
 		public void 格納されているジュースの在庫数を取得できる()
 		{
 			// 準備
+			_sut.ClearStocks();
 			DrinkKind drink = new DrinkKind("コーラ", 120);
 			_sut.AddDrinkKind(drink, 5);
 			// 実行
 			int actual = _sut.CountStockOf(drink);
 			// 確認
 			Assert.AreEqual(5, actual);
+		}
+
+		[Test()]
+		public void 初期状態でコーラを格納している()
+		{
+			// 実行
+			List<DrinkKind> kinds = _sut.AllDrinkKinds();
+			// 確認
+			DrinkKind actual = kinds[0];
+			Assert.AreEqual("コーラ", actual.Name);
 		}
 
 	}

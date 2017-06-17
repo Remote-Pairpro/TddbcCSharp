@@ -11,6 +11,15 @@ namespace TddbcCSharp.Vending
 		public DrinkKindAndStocks()
 		{
 			_drinkKindAndStocks = new Dictionary<DrinkKind , int>();
+			initStock();
+		}
+
+		private void initStock() {
+			AddDrinkKind(new DrinkKind("コーラ", 120), 5);
+		}
+
+		public void Clear() {
+			_drinkKindAndStocks.Clear();
 		}
 
 		public int CountKinds()

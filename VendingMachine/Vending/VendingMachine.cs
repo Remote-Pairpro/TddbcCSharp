@@ -13,6 +13,10 @@ namespace TddbcCSharp.Vending
 			_drinkKindAndStocks = new DrinkKindAndStocks();
 		}
 
+		public void ClearStocks() {
+			_drinkKindAndStocks.Clear();
+		}
+
 		public int CountKinds()
 		{
 			return _drinkKindAndStocks.CountKinds();
