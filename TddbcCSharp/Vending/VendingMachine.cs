@@ -6,7 +6,7 @@ namespace TddbcCSharp.Vending
 	public class VendingMachine
 	{
 
-		Dictionary<DrinkKind , int> _drinkKinds = new Dictionary<DrinkKind , int>();
+		Dictionary<DrinkKind , int> _drinkKindAndStocks = new Dictionary<DrinkKind , int>();
 
 		public VendingMachine()
 		{
@@ -14,22 +14,22 @@ namespace TddbcCSharp.Vending
 
 		public int CountKinds()
 		{
-			return _drinkKinds.Count;
+			return _drinkKindAndStocks.Count;
 		}
 
 		public void AddDrinkKind(DrinkKind drink, int stockCount)
 		{
-			_drinkKinds.Add(drink, stockCount);
+			_drinkKindAndStocks.Add(drink, stockCount);
 		}
 
 		public List<DrinkKind> AllDrinkKinds()
 		{
-			return new List<DrinkKind>(_drinkKinds.Keys);
+			return new List<DrinkKind>(_drinkKindAndStocks.Keys);
 		}
 
 		public int GetStockCount(DrinkKind drinks)
 		{
-			return _drinkKinds[drinks];
+			return _drinkKindAndStocks[drinks];
 		}
 	}
 }
