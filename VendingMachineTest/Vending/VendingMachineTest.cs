@@ -71,6 +71,15 @@ namespace TddbcCSharpNUnit
 		}
 
 		[Test()]
+		public void 初期状態でジュース1種類を格納している()
+		{
+			// 実行
+			List<DrinkKind> actual = _sut.AllDrinkKinds();
+			// 確認
+			Assert.AreEqual(1 , actual.Count);
+		}
+
+		[Test()]
 		public void 初期状態でコーラを格納している()
 		{
 			// 実行
