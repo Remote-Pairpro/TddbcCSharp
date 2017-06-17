@@ -21,7 +21,7 @@ namespace TddbcCSharpNUnit
 
 		[Test()]
 		public void 未投入の場合は投入金額の総計が０である() {
-			int expect = _sut.TotalAmount();
+			int expect = _sut.TotalAmount;
 			Assert.AreEqual(0, expect);
 		}
 
