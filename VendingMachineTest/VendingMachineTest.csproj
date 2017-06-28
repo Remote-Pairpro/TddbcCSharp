@@ -29,7 +29,6 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ChainingAssertion.MSTest.cs" />
     <Compile Include="ChainingAssertion.NUnit.cs" />
     <Compile Include="Vending\VendingMachineTest.cs" />
   </ItemGroup>
