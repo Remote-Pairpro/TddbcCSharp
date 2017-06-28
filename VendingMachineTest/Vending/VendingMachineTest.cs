@@ -132,7 +132,7 @@ namespace TddbcCSharp.Vending
             // 実行
             _sut.AddDrinkKind(drink, 5);
             // 確認
-            Assert.AreEqual(1, _sut.CountKinds());
+            _sut.CountKinds().Is(1);
         }
 
         [Test()]
