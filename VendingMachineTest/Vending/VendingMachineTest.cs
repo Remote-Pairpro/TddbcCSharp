@@ -15,7 +15,7 @@ namespace TddbcCSharp.Vending
             _sut = new VendingMachine();
         }
 
-        // ---- Step0 ----
+        // ---- Step0 (with Basic NUnit) ----
 
         [Test]
         public void 未投入の場合は投入金額の総計が０である()
