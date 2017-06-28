@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TddbcCSharp.Vending
 {
-    [TestFixture()]
+    [TestFixture]
     public class VendingMachineTest
     {
 
@@ -17,13 +17,13 @@ namespace TddbcCSharp.Vending
 
         // ---- Step0 ----
 
-        [Test()]
+        [Test]
         public void 未投入の場合は投入金額の総計が０である()
         {
             Assert.AreEqual(0, _sut.TotalAmount);
         }
 
-        [Test()]
+        [Test]
         public void 十円投入すると総計が十円となる()
         {
             // 実行
@@ -32,7 +32,7 @@ namespace TddbcCSharp.Vending
             Assert.AreEqual(10, _sut.TotalAmount);
         }
 
-        [Test()]
+        [Test]
         public void 五十円投入すると総計が五十円となる()
         {
             // 実行
@@ -41,7 +41,7 @@ namespace TddbcCSharp.Vending
             Assert.AreEqual(50, _sut.TotalAmount);
         }
 
-        [Test()]
+        [Test]
         public void 百円投入すると総計が百円となる()
         {
             // 実行
@@ -50,7 +50,7 @@ namespace TddbcCSharp.Vending
             Assert.AreEqual(100, _sut.TotalAmount);
         }
 
-        [Test()]
+        [Test]
         public void 五百円投入すると総計が五百円となる()
         {
             // 実行
@@ -59,7 +59,7 @@ namespace TddbcCSharp.Vending
             Assert.AreEqual(500, _sut.TotalAmount);
         }
 
-        [Test()]
+        [Test]
         public void 千投入すると総計が千円となる()
         {
             // 実行
@@ -68,7 +68,7 @@ namespace TddbcCSharp.Vending
             Assert.AreEqual(1000, _sut.TotalAmount);
         }
 
-        [Test()]
+        [Test]
         public void 複数回投入すると総計が取得できる()
         {
             // 実行
@@ -78,7 +78,7 @@ namespace TddbcCSharp.Vending
             Assert.AreEqual(60, _sut.TotalAmount);
         }
 
-        [Test()]
+        [Test]
         public void 硬貨を混ぜた複数回投入が出来て総合計が確認できる()
         {
             // 準備
@@ -98,7 +98,7 @@ namespace TddbcCSharp.Vending
             Assert.AreEqual(3320, actual);
         }
 
-        [Test()]
+        [Test]
         public void 払い戻しで現在の総計が帰ってくる()
         {
             // 準備
@@ -110,7 +110,7 @@ namespace TddbcCSharp.Vending
             Assert.AreEqual(20, actual);
         }
 
-        [Test()]
+        [Test]
         public void 払い戻しを行うと総計が0になる()
         {
             // 準備
@@ -123,7 +123,7 @@ namespace TddbcCSharp.Vending
 
         // ---- Step2 (with Chaining Assertion) ----
 
-        [Test()]
+        [Test]
         public void ジュースを一種類格納できる()
         {
             // 準備
@@ -135,7 +135,7 @@ namespace TddbcCSharp.Vending
             _sut.CountKinds().Is(1);
         }
 
-        [Test()]
+        [Test]
         public void 格納されているジュースを取得できる()
         {
             // 準備
@@ -149,7 +149,7 @@ namespace TddbcCSharp.Vending
             actual.Name.Is("コーラ");
         }
 
-        [Test()]
+        [Test]
         public void 格納されているジュースの価格が取得できる()
         {
             // 準備
@@ -163,7 +163,7 @@ namespace TddbcCSharp.Vending
             actual.Price.Is(120);
         }
 
-        [Test()]
+        [Test]
         public void 格納されているジュースの在庫数を取得できる()
         {
             // 準備
@@ -176,7 +176,7 @@ namespace TddbcCSharp.Vending
             actual.Is(5);
         }
 
-        [Test()]
+        [Test]
         public void 初期状態でジュース1種類を格納している()
         {
             // 実行
@@ -185,7 +185,7 @@ namespace TddbcCSharp.Vending
             actual.Count.Is(1);
         }
 
-        [Test()]
+        [Test]
         public void 初期状態でコーラを格納している()
         {
             // 実行
@@ -195,7 +195,7 @@ namespace TddbcCSharp.Vending
             actual.Name.Is("コーラ");
         }
 
-        [Test()]
+        [Test]
         public void 初期状態で120円の飲み物を格納している()
         {
             // 実行
@@ -205,7 +205,7 @@ namespace TddbcCSharp.Vending
             actual.Price.Is(120);
         }
 
-        [Test()]
+        [Test]
         public void 初期状態で在庫を5本格納している()
         {
             List<DrinkKind> kinds = _sut.AllDrinkKinds();
