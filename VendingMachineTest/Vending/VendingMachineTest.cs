@@ -121,7 +121,7 @@ namespace TddbcCSharp.Vending
             Assert.AreEqual(0, _sut.TotalAmount);
         }
 
-        // ---- Step2 ----
+        // ---- Step2 (with Chaining Assertion) ----
 
         [Test()]
         public void ジュースを一種類格納できる()
@@ -146,7 +146,7 @@ namespace TddbcCSharp.Vending
             List<DrinkKind> kinds = _sut.AllDrinkKinds();
             // 確認
             DrinkKind actual = kinds[0];
-            Assert.AreEqual("コーラ", actual.Name);
+            actual.Name.Is("コーラ");
         }
 
         [Test()]
@@ -160,7 +160,7 @@ namespace TddbcCSharp.Vending
             List<DrinkKind> kinds = _sut.AllDrinkKinds();
             // 確認
             DrinkKind actual = kinds[0];
-            Assert.AreEqual(120, actual.Price);
+            actual.Price.Is(120);
         }
 
         [Test()]
@@ -173,7 +173,7 @@ namespace TddbcCSharp.Vending
             // 実行
             int actual = _sut.CountStockOf(drink);
             // 確認
-            Assert.AreEqual(5, actual);
+            actual.Is(5);
         }
 
         [Test()]
@@ -182,7 +182,7 @@ namespace TddbcCSharp.Vending
             // 実行
             List<DrinkKind> actual = _sut.AllDrinkKinds();
             // 確認
-            Assert.AreEqual(1, actual.Count);
+            actual.Count.Is(1);
         }
 
         [Test()]
@@ -192,7 +192,7 @@ namespace TddbcCSharp.Vending
             List<DrinkKind> kinds = _sut.AllDrinkKinds();
             // 確認
             DrinkKind actual = kinds[0];
-            Assert.AreEqual("コーラ", actual.Name);
+            actual.Name.Is("コーラ");
         }
 
         [Test()]
@@ -202,7 +202,7 @@ namespace TddbcCSharp.Vending
             List<DrinkKind> kinds = _sut.AllDrinkKinds();
             // 確認
             DrinkKind actual = kinds[0];
-            Assert.AreEqual(120, actual.Price);
+            actual.Price.Is(120);
         }
 
         [Test()]
@@ -213,7 +213,7 @@ namespace TddbcCSharp.Vending
             // 実行
             int actual = _sut.CountStockOf(drinkKind);
             // 確認
-            Assert.AreEqual(5, actual);
+            actual.Is(5);
         }
 
     }
