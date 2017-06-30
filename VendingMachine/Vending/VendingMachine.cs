@@ -65,6 +65,11 @@ namespace TddbcCSharp.Vending
             return _drinkKindAndStocks.CountStockOf(drinkKind);
         }
 
+        public bool CanBuy(string drinkName)
+        {
+            return true;
+        }
+
         private bool IsNotJapaneseMoney(int amount)
         {
             return !Enum.IsDefined(typeof(JapaneseMoney), amount);
@@ -75,10 +80,6 @@ namespace TddbcCSharp.Vending
             return (JapaneseMoney)Enum.ToObject(typeof(JapaneseMoney), amount);
         }
 
-        public bool CanBuy(string v)
-        {
-            return true;
-        }
     }
 }
 
