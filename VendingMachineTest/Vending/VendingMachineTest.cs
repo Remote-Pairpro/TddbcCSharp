@@ -172,16 +172,23 @@ namespace TddbcCSharp.Vending
             Assert.That(actual, Is.EqualTo(123));
         }
 
-		[Test]
-		public void 日本の通貨紙幣以外を投入されたら総計に加算されない()
-		{
-			_sut.Insert(123);
-			Assert.That(_sut.TotalAmount, Is.EqualTo(0));
+        [Test]
+        public void 日本の通貨紙幣以外を投入されたら総計に加算されない()
+        {
+            _sut.Insert(123);
+            Assert.That(_sut.TotalAmount, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void 自販機で使える日本の通貨紙幣を投入されたらお釣りは帰ってこない()
+        {
+			int actual = _sut.Insert(100);
+			Assert.That(actual, Is.EqualTo(0));
 		}
 
-		// ---- Step2 (with Chaining Assertion) ----
+        // ---- Step2 (with Chaining Assertion) ----
 
-		[Test]
+        [Test]
         public void ジュースを一種類格納できる()
         {
             // 準備
