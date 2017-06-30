@@ -88,6 +88,11 @@ namespace TddbcCSharp.Vending
             _drinkKindAndStocks.PopStock(v);
             return true;
         }
+
+        public int SaleAmount()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
