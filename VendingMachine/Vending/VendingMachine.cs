@@ -84,8 +84,9 @@ namespace TddbcCSharp.Vending
             if (!CanBuy(drinkName)) return false;
             DrinkKind drinkKind = _drinkKindAndStocks.Of(drinkName);
             _drinkKindAndStocks.PopStock(drinkKind);
-            _totalAmount -= drinkKind.Price;
-            _saleAmount += drinkKind.Price;
+            int price = drinkKind.Price;
+            _totalAmount -= price;
+            _saleAmount += price;
             return true;
         }
 
