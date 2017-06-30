@@ -69,9 +69,8 @@ namespace TddbcCSharp.Vending
         {
             if (!_drinkKindAndStocks.ExistsBy(drinkName)) return false;
             DrinkKind drinkKind = _drinkKindAndStocks.Of(drinkName);
-            if (drinkKind.Price > _totalAmount) return false;
-            if (CountStockOf(drinkKind) <= 0) return false;
-            return true;
+            return drinkKind.Price < _totalAmount
+                && CountStockOf(drinkKind) > 0;
         }
 
         private bool IsNotJapaneseMoney(int amount)
