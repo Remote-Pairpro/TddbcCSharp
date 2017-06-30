@@ -166,15 +166,22 @@ namespace TddbcCSharp.Vending
         }
 
         [Test]
-        public void 日本の通貨以外を投入されたら釣り銭として戻される()
+        public void 日本の通貨紙幣以外を投入されたら釣り銭として戻される()
         {
             int actual = _sut.Insert(123);
             Assert.That(actual, Is.EqualTo(123));
         }
 
-        // ---- Step2 (with Chaining Assertion) ----
+		[Test]
+		public void 日本の通貨紙幣以外を投入されたら総計に加算されない()
+		{
+			_sut.Insert(123);
+			Assert.That(_sut.TotalAmount, Is.EqualTo(0));
+		}
 
-        [Test]
+		// ---- Step2 (with Chaining Assertion) ----
+
+		[Test]
         public void ジュースを一種類格納できる()
         {
             // 準備
