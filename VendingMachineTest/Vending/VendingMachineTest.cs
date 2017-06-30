@@ -301,5 +301,20 @@ namespace TddbcCSharp.Vending
             actual.Is(false);
         }
 
+        [Test]
+        public void 投入金額が十分でも在庫が無いなら購入不可であることが確認出来る()
+        {
+            _sut.ClearStocks();
+            _sut.AddDrinkKind(new DrinkKind("コーラ", 120), 0);
+
+            _sut.Insert(百円玉);
+            _sut.Insert(十円玉);
+            _sut.Insert(十円玉);
+
+            bool actual = _sut.CanBuy("コーラ");
+
+            actual.Is(false);
+        }
+
     }
 }

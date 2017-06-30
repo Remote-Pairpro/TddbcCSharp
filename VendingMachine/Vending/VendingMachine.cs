@@ -67,6 +67,7 @@ namespace TddbcCSharp.Vending
 
         public bool CanBuy(string drinkName)
         {
+            if (CountStockOf(new DrinkKind(drinkName, 0)) <= 0) return false;
             if (_totalAmount < 120) return false;
             return true;
         }
