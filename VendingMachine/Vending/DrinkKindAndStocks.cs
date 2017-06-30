@@ -55,9 +55,9 @@ namespace TddbcCSharp.Vending
                 .First(drinkKind => drinkKind.Name == drinkName);
         }
 
-        internal void PopStock(string drinkName)
+        internal void PopStock(DrinkKind drinkKind)
         {
-            _drinkKindAndStocks[DrinkKind.By(drinkName)]--;
+            _drinkKindAndStocks[drinkKind]--;
         }
     }
 }

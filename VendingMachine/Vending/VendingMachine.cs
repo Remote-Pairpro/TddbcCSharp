@@ -87,7 +87,7 @@ namespace TddbcCSharp.Vending
         public bool Buy(string v)
         {
             DrinkKind drinkKind = _drinkKindAndStocks.Of(v);
-            _drinkKindAndStocks.PopStock(v);
+            _drinkKindAndStocks.PopStock(drinkKind);
             _saleAmount += drinkKind.Price;
             return true;
         }
