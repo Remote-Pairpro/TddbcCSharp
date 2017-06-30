@@ -8,6 +8,7 @@ namespace TddbcCSharp.Vending
     {
 
         int _totalAmount = 0;
+        private int _saleAmount = 0;
         DrinkKindAndStocks _drinkKindAndStocks;
 
         public VendingMachine()
@@ -85,14 +86,17 @@ namespace TddbcCSharp.Vending
 
         public bool Buy(string v)
         {
+            DrinkKind drinkKind = _drinkKindAndStocks.Of(v);
             _drinkKindAndStocks.PopStock(v);
+            _saleAmount += drinkKind.Price;
             return true;
         }
 
         public int SaleAmount()
         {
-            throw new NotImplementedException();
+            return _saleAmount;
         }
+
     }
 }
 
