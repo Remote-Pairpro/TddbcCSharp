@@ -7,9 +7,9 @@ namespace TddbcCSharp.Vending
     public class VendingMachine
     {
 
-        int _totalAmount = 0;
+        private int _totalAmount = 0;
         private int _saleAmount = 0;
-        DrinkKindAndStocks _drinkKindAndStocks;
+        private readonly DrinkKindAndStocks _drinkKindAndStocks;
 
         public VendingMachine()
         {
@@ -19,6 +19,11 @@ namespace TddbcCSharp.Vending
         public int TotalAmount
         {
             get { return _totalAmount; }
+        }
+
+        public int SaleAmount
+        {
+            get { return _saleAmount; }
         }
 
         public int Insert(JapaneseMoney money)
@@ -80,11 +85,6 @@ namespace TddbcCSharp.Vending
             _drinkKindAndStocks.PopStock(drinkKind);
             _saleAmount += drinkKind.Price;
             return true;
-        }
-
-        public int SaleAmount()
-        {
-            return _saleAmount;
         }
 
         private bool IsNotJapaneseMoney(int amount)

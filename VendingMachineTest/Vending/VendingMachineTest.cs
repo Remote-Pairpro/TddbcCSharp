@@ -334,14 +334,14 @@ namespace TddbcCSharp.Vending
         [Test]
         public void 購入操作を行うと売上金額が増える()
         {
-            int beforeSaleAmount = _sut.SaleAmount();
+            int beforeSaleAmount = _sut.SaleAmount;
             beforeSaleAmount.Is(0);
             _sut.Insert(五百円玉);
 
             bool actual = _sut.Buy("コーラ");
 
             actual.Is(true);
-            int afterSaleAmount = _sut.SaleAmount();
+            int afterSaleAmount = _sut.SaleAmount;
             afterSaleAmount.Is(120);
         }
 
