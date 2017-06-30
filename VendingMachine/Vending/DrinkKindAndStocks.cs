@@ -52,8 +52,7 @@ namespace TddbcCSharp.Vending
         internal DrinkKind Of(string drinkName)
         {
             return _drinkKindAndStocks.Keys
-                .Where(drinkKind => drinkKind.Name == drinkName)
-                .First();
+                .First(drinkKind => drinkKind.Name == drinkName);
         }
 
         internal void PopStock(string drinkName)
