@@ -26,9 +26,9 @@ namespace VendingMachine.Vending
             千円札
         };
 
-        public static bool CanUse(this JapaneseMoney monay)
+        public static bool CanUse(this JapaneseMoney money)
         {
-            return VALID_MOENY.Contains(monay);
+            return VALID_MOENY.Contains(money);
         }
 
     }
