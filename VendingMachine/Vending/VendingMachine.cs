@@ -25,7 +25,7 @@ namespace TddbcCSharp.Vending
             int[] invalidAmounts = new int[] { 1, 5, 10000, 123 };
             if (invalidAmounts.Contains(amount)) return amount;
             _totalAmount += amount;
-            return 1;
+            return 0;
         }
 
         public int PayBack()
