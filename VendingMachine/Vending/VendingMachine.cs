@@ -81,7 +81,7 @@ namespace TddbcCSharp.Vending
 
         public bool Buy(string drinkName)
         {
-            if (_totalAmount < 120) return false;
+            if (!CanBuy(drinkName)) return false;
             DrinkKind drinkKind = _drinkKindAndStocks.Of(drinkName);
             _drinkKindAndStocks.PopStock(drinkKind);
             _saleAmount += drinkKind.Price;
