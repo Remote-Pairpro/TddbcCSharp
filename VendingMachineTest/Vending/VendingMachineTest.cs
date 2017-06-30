@@ -362,5 +362,26 @@ namespace TddbcCSharp.Vending
             _sut.SaleAmount.Is(beforeSaleAmount);
         }
 
+        [Test]
+        public void 在庫が足りない状態で購入操作を行うと何もおきない()
+        {
+            DrinkKind kind = new DrinkKind("コーラ", 120);
+            _sut.ClearStocks();
+            _sut.AddDrinkKind(kind, 0);
+
+            int beforeStockCount = _sut.CountStockOf(kind);
+            int beforeSaleAmount = _sut.SaleAmount;
+
+            _sut.Insert(百円玉);
+            _sut.Insert(十円玉);
+            _sut.Insert(十円玉);
+
+            bool actual = _sut.Buy(kind.Name);
+
+            actual.Is(false);
+            _sut.CountStockOf(kind).Is(beforeStockCount);
+            _sut.SaleAmount.Is(beforeSaleAmount);
+        }
+
     }
 }
