@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace TddbcCSharp.Vending
@@ -54,6 +55,11 @@ namespace TddbcCSharp.Vending
             return _drinkKindAndStocks.Keys
                 .Where(drinkKind => drinkKind.Name == drinkName)
                 .First();
+        }
+
+        internal void PopStock(string drinkName)
+        {
+            _drinkKindAndStocks[new DrinkKind(drinkName, 0)]--;
         }
     }
 }

@@ -85,7 +85,8 @@ namespace TddbcCSharp.Vending
 
         public bool Buy(string v)
         {
-            throw new NotImplementedException();
+            _drinkKindAndStocks.PopStock(v);
+            return true;
         }
     }
 }
