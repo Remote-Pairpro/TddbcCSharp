@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace TddbcCSharp.Vending
 {
-    public class DrinkKindAndStocks
+    internal class DrinkKindAndStocks
     {
 
         Dictionary<DrinkKind, int> _drinkKindAndStocks;
 
-        public DrinkKindAndStocks()
+        internal DrinkKindAndStocks()
         {
             initStock();
         }
@@ -20,27 +19,27 @@ namespace TddbcCSharp.Vending
             AddDrinkKind(new DrinkKind("コーラ", 120), 5);
         }
 
-        public void Clear()
+        internal void Clear()
         {
             _drinkKindAndStocks.Clear();
         }
 
-        public int CountKinds()
+        internal int CountKinds()
         {
             return _drinkKindAndStocks.Count;
         }
 
-        public void AddDrinkKind(DrinkKind drink, int stockCount)
+        internal void AddDrinkKind(DrinkKind drink, int stockCount)
         {
             _drinkKindAndStocks.Add(drink, stockCount);
         }
 
-        public List<DrinkKind> AllDrinkKinds()
+        internal List<DrinkKind> AllDrinkKinds()
         {
             return new List<DrinkKind>(_drinkKindAndStocks.Keys);
         }
 
-        public int CountStockOf(DrinkKind drinkKind)
+        internal int CountStockOf(DrinkKind drinkKind)
         {
             return _drinkKindAndStocks[drinkKind];
         }
