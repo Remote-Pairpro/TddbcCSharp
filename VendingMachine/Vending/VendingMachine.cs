@@ -83,6 +83,10 @@ namespace TddbcCSharp.Vending
             return (JapaneseMoney)Enum.ToObject(typeof(JapaneseMoney), amount);
         }
 
+        public bool Buy(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
