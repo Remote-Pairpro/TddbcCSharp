@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TddbcCSharp.Vending
 {
@@ -21,9 +22,9 @@ namespace TddbcCSharp.Vending
 
         public int Insert(int amount)
         {
-            if (amount == 1) return 1;
-			if (amount == 5) return 5;
-			_totalAmount += amount;
+            int[] invalidAmounts = new int[] { 1, 5 };
+            if (invalidAmounts.Contains(amount)) return amount;
+            _totalAmount += amount;
             return 1;
         }
 
