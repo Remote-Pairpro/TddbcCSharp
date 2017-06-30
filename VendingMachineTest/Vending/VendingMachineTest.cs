@@ -158,7 +158,6 @@ namespace TddbcCSharp.Vending
 			Assert.That(actual, Is.EqualTo(10000));
 		}
 
-        [Ignore("先に実装してしまったのでひとまず殺す")]
 		[Test]
 		public void 一万円札を投入されたら総計に加算されない()
 		{
