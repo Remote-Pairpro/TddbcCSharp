@@ -395,5 +395,7 @@ namespace TddbcCSharp.Vending
             actual.Is(380);
         }
 
+        // ---- Step4 (with Chaining Assertion) ----
+
     }
 }
