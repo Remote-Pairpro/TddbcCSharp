@@ -22,7 +22,8 @@ namespace TddbcCSharp.Vending
         public int Insert(int amount)
         {
             if (amount == 1) return 1;
-            _totalAmount += amount;
+			if (amount == 5) return 5;
+			_totalAmount += amount;
             return 1;
         }
 
