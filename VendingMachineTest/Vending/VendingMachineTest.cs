@@ -282,5 +282,15 @@ namespace TddbcCSharp.Vending
             actual.Is(5);
         }
 
+        // ---- Step3 (with Chaining Assertion) ----
+
+        [Test]
+        public void 投入金額が十分で在庫もある場合コーラ購入可能が確認出来る()
+        {
+            _sut.Insert(五百円玉);
+            bool actual = _sut.CanBuy("コーラ");
+            actual.Is(true);
+        }
+
     }
 }
