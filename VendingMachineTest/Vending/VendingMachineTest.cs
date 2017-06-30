@@ -292,5 +292,14 @@ namespace TddbcCSharp.Vending
             actual.Is(true);
         }
 
+        [Test]
+        public void 投入金額不足なら在庫があっても購入不可であることが確認出来る()
+        {
+            _sut.Insert(百円玉);
+            _sut.Insert(十円玉);
+            bool actual = _sut.CanBuy("コーラ");
+            actual.Is(false);
+        }
+
     }
 }
