@@ -327,10 +327,9 @@ namespace TddbcCSharp.Vending
             bool actual = _sut.Buy(kind.Name);
 
             actual.Is(true);
-            int stockCount = _sut.CountStockOf(kind);
-            stockCount.Is(4);
+            int afterStockCount = _sut.CountStockOf(kind);
+            afterStockCount.Is(4);
         }
-
 
     }
 }
