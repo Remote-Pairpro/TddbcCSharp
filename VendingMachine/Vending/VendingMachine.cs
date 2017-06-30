@@ -19,9 +19,10 @@ namespace TddbcCSharp.Vending
             get { return _totalAmount; }
         }
 
-        public void Insert(int amount)
+        public int Insert(int amount)
         {
             _totalAmount += amount;
+            return 1;
         }
 
         public int PayBack()

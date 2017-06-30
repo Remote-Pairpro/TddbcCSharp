@@ -121,6 +121,15 @@ namespace TddbcCSharp.Vending
             Assert.AreEqual(0, _sut.TotalAmount);
         }
 
+        // ---- Step1 (with NUnit3 Style) ----
+
+        [Test]
+        public void 一円玉を投入されたら釣り銭として戻される()
+        {
+            int actual = _sut.Insert(1);
+            Assert.That(actual, Is.EqualTo(1));
+        }
+
         // ---- Step2 (with Chaining Assertion) ----
 
         [Test]
