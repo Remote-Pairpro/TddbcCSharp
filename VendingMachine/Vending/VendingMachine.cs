@@ -67,8 +67,10 @@ namespace TddbcCSharp.Vending
 
         public bool CanBuy(string drinkName)
         {
-            if (CountStockOf(new DrinkKind(drinkName, 0)) <= 0) return false;
-            if (_totalAmount < 120) return false;
+            if (!_drinkKindAndStocks.ExistsBy(drinkName)) return false;
+            DrinkKind drinkKind = _drinkKindAndStocks.Of(drinkName);
+            if (drinkKind.Price > _totalAmount) return false;
+            if (CountStockOf(drinkKind) <= 0) return false;
             return true;
         }
 

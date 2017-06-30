@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace TddbcCSharp.Vending
 {
@@ -42,6 +42,18 @@ namespace TddbcCSharp.Vending
         public int CountStockOf(DrinkKind drinkKind)
         {
             return _drinkKindAndStocks[drinkKind];
+        }
+
+        internal bool ExistsBy(string drinkName)
+        {
+            return _drinkKindAndStocks.ContainsKey(new DrinkKind(drinkName, 0));
+        }
+
+        internal DrinkKind Of(string drinkName)
+        {
+            return _drinkKindAndStocks.Keys
+                .Where(drinkKind => drinkKind.Name == drinkName)
+                .First();
         }
     }
 }
