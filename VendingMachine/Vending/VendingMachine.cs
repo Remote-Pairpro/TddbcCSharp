@@ -33,7 +33,6 @@ namespace TddbcCSharp.Vending
             int lastTotal = _totalAmount;
             _totalAmount = 0;
             return lastTotal;
-            ;
         }
 
         public void ClearStocks()
