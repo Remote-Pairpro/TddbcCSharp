@@ -46,7 +46,7 @@ namespace TddbcCSharp.Vending
 
         internal bool ExistsBy(string drinkName)
         {
-            return _drinkKindAndStocks.ContainsKey(new DrinkKind(drinkName, 0));
+            return _drinkKindAndStocks.ContainsKey(DrinkKind.By(drinkName));
         }
 
         internal DrinkKind Of(string drinkName)
@@ -58,7 +58,7 @@ namespace TddbcCSharp.Vending
 
         internal void PopStock(string drinkName)
         {
-            _drinkKindAndStocks[new DrinkKind(drinkName, 0)]--;
+            _drinkKindAndStocks[DrinkKind.By(drinkName)]--;
         }
     }
 }

@@ -319,14 +319,15 @@ namespace TddbcCSharp.Vending
         [Test]
         public void 購入操作を行うと在庫が減る()
         {
-            int beforeStockCount = _sut.CountStockOf(new DrinkKind("コーラ", 120));
+            DrinkKind kind = DrinkKind.By("コーラ");
+            int beforeStockCount = _sut.CountStockOf(kind);
             beforeStockCount.Is(5);
             _sut.Insert(五百円玉);
 
             bool actual = _sut.Buy("コーラ");
 
             actual.Is(true);
-            int stockCount = _sut.CountStockOf(new DrinkKind("コーラ", 120));
+            int stockCount = _sut.CountStockOf(kind);
             stockCount.Is(4);
         }
 

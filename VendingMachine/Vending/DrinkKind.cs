@@ -27,6 +27,11 @@ namespace TddbcCSharp.Vending
             get { return _price; }
         }
 
+        public static DrinkKind By(string drinkName)
+        {
+            return new DrinkKind(drinkName, 0);
+        }
+
         public override bool Equals(Object obj)
         {
             if (obj == null || !(obj is DrinkKind))
