@@ -74,19 +74,9 @@ namespace TddbcCSharp.Vending
                 && CountStockOf(drinkKind) > 0;
         }
 
-        private bool IsNotJapaneseMoney(int amount)
+        public bool Buy(string drinkName)
         {
-            return !Enum.IsDefined(typeof(JapaneseMoney), amount);
-        }
-
-        private JapaneseMoney ToManey(int amount)
-        {
-            return (JapaneseMoney)Enum.ToObject(typeof(JapaneseMoney), amount);
-        }
-
-        public bool Buy(string v)
-        {
-            DrinkKind drinkKind = _drinkKindAndStocks.Of(v);
+            DrinkKind drinkKind = _drinkKindAndStocks.Of(drinkName);
             _drinkKindAndStocks.PopStock(drinkKind);
             _saleAmount += drinkKind.Price;
             return true;
@@ -95,6 +85,16 @@ namespace TddbcCSharp.Vending
         public int SaleAmount()
         {
             return _saleAmount;
+        }
+
+        private bool IsNotJapaneseMoney(int amount)
+        {
+            return !Enum.IsDefined(typeof(JapaneseMoney), amount);
+        }
+
+        private JapaneseMoney ToManey(int amount)
+        {
+            return (JapaneseMoney)Enum.ToObject(typeof(JapaneseMoney), amount);
         }
 
     }
