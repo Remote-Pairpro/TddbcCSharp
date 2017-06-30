@@ -11,7 +11,7 @@ namespace TddbcCSharp.Vending
         private VendingMachine _sut;
 
         [SetUp]
-        public void setUp()
+        public void SetUp()
         {
             _sut = new VendingMachine();
         }
