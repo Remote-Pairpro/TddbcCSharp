@@ -324,7 +324,7 @@ namespace TddbcCSharp.Vending
             beforeStockCount.Is(5);
             _sut.Insert(五百円玉);
 
-            bool actual = _sut.Buy("コーラ");
+            bool actual = _sut.Buy(kind.Name);
 
             actual.Is(true);
             int stockCount = _sut.CountStockOf(kind);
