@@ -383,5 +383,17 @@ namespace TddbcCSharp.Vending
             _sut.SaleAmount.Is(beforeSaleAmount);
         }
 
+        [Test]
+        public void 購入してから払い戻すと購入金額が引かれた釣り銭が返る()
+        {
+            _sut.Insert(五百円玉);
+            _sut.TotalAmount.Is(500);
+            _sut.Buy("コーラ");
+
+            int actual = _sut.PayBack();
+
+            actual.Is(380);
+        }
+
     }
 }
