@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
+using static VendingMachine.Vending.JapaneseMoney;
 
 namespace TddbcCSharp.Vending
 {
@@ -27,7 +28,7 @@ namespace TddbcCSharp.Vending
         public void 十円投入すると総計が十円となる()
         {
             // 実行
-            _sut.Insert(10);
+            _sut.Insert(十円玉);
             // 確認
             Assert.AreEqual(10, _sut.TotalAmount);
         }
@@ -36,7 +37,7 @@ namespace TddbcCSharp.Vending
         public void 五十円投入すると総計が五十円となる()
         {
             // 実行
-            _sut.Insert(50);
+            _sut.Insert(五十円玉);
             // 確認
             Assert.AreEqual(50, _sut.TotalAmount);
         }
@@ -45,7 +46,7 @@ namespace TddbcCSharp.Vending
         public void 百円投入すると総計が百円となる()
         {
             // 実行
-            _sut.Insert(100);
+            _sut.Insert(百円玉);
             // 確認
             Assert.AreEqual(100, _sut.TotalAmount);
         }
@@ -54,7 +55,7 @@ namespace TddbcCSharp.Vending
         public void 五百円投入すると総計が五百円となる()
         {
             // 実行
-            _sut.Insert(500);
+            _sut.Insert(五百円玉);
             // 確認
             Assert.AreEqual(500, _sut.TotalAmount);
         }
@@ -63,7 +64,7 @@ namespace TddbcCSharp.Vending
         public void 千投入すると総計が千円となる()
         {
             // 実行
-            _sut.Insert(1000);
+            _sut.Insert(千円札);
             // 確認
             Assert.AreEqual(1000, _sut.TotalAmount);
         }
@@ -72,8 +73,8 @@ namespace TddbcCSharp.Vending
         public void 複数回投入すると総計が取得できる()
         {
             // 実行
-            _sut.Insert(10);
-            _sut.Insert(50);
+            _sut.Insert(十円玉);
+            _sut.Insert(五十円玉);
             // 確認
             Assert.AreEqual(60, _sut.TotalAmount);
         }
@@ -82,16 +83,16 @@ namespace TddbcCSharp.Vending
         public void 硬貨を混ぜた複数回投入が出来て総合計が確認できる()
         {
             // 準備
-            _sut.Insert(10);
-            _sut.Insert(50);
-            _sut.Insert(100);
-            _sut.Insert(500);
-            _sut.Insert(1000);
-            _sut.Insert(10);
-            _sut.Insert(50);
-            _sut.Insert(100);
-            _sut.Insert(500);
-            _sut.Insert(1000);
+            _sut.Insert(十円玉);
+            _sut.Insert(五十円玉);
+            _sut.Insert(百円玉);
+            _sut.Insert(五百円玉);
+            _sut.Insert(千円札);
+            _sut.Insert(十円玉);
+            _sut.Insert(五十円玉);
+            _sut.Insert(百円玉);
+            _sut.Insert(五百円玉);
+            _sut.Insert(千円札);
             // 実行
             int actual = _sut.TotalAmount;
             // 確認
@@ -102,8 +103,8 @@ namespace TddbcCSharp.Vending
         public void 払い戻しで現在の総計が帰ってくる()
         {
             // 準備
-            _sut.Insert(10);
-            _sut.Insert(10);
+            _sut.Insert(十円玉);
+            _sut.Insert(十円玉);
             // 実行
             int actual = _sut.PayBack();
             // 確認
@@ -114,7 +115,7 @@ namespace TddbcCSharp.Vending
         public void 払い戻しを行うと総計が0になる()
         {
             // 準備
-            _sut.Insert(10);
+            _sut.Insert(十円玉);
             // 実行
             _sut.PayBack();
             // 確認
@@ -126,42 +127,42 @@ namespace TddbcCSharp.Vending
         [Test]
         public void 一円玉を投入されたら釣り銭として戻される()
         {
-            int actual = _sut.Insert(1);
+            int actual = _sut.Insert(一円玉);
             Assert.That(actual, Is.EqualTo(1));
         }
 
         [Test]
         public void 一円玉を投入されたら総計に加算されない()
         {
-            _sut.Insert(1);
+            _sut.Insert(一円玉);
             Assert.That(_sut.TotalAmount, Is.EqualTo(0));
         }
 
         [Test]
         public void 五円玉を投入されたら釣り銭として戻される()
         {
-            int actual = _sut.Insert(5);
+            int actual = _sut.Insert(五円玉);
             Assert.That(actual, Is.EqualTo(5));
         }
 
         [Test]
         public void 五円玉を投入されたら総計に加算されない()
         {
-            _sut.Insert(5);
+            _sut.Insert(五円玉);
             Assert.That(_sut.TotalAmount, Is.EqualTo(0));
         }
 
         [Test]
         public void 一万円札を投入されたら釣り銭として戻される()
         {
-            int actual = _sut.Insert(10000);
+            int actual = _sut.Insert(一万円札);
             Assert.That(actual, Is.EqualTo(10000));
         }
 
         [Test]
         public void 一万円札を投入されたら総計に加算されない()
         {
-            _sut.Insert(10000);
+            _sut.Insert(一万円札);
             Assert.That(_sut.TotalAmount, Is.EqualTo(0));
         }
 
@@ -182,7 +183,7 @@ namespace TddbcCSharp.Vending
         [Test]
         public void 自販機で使える日本の通貨紙幣を投入されたらお釣りは帰ってこない()
         {
-            int actual = _sut.Insert(100);
+            int actual = _sut.Insert(百円玉);
             Assert.That(actual, Is.EqualTo(0));
         }
 

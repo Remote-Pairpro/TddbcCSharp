@@ -31,6 +31,11 @@ namespace VendingMachine.Vending
             return VALID_MOENY.Contains(money);
         }
 
+        public static int Amount(this JapaneseMoney money)
+        {
+            return (int)money;
+        }
+
     }
 
 }

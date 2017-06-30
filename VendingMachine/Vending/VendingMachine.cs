@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using VendingMachine.Vending;
 
 namespace TddbcCSharp.Vending
 {
@@ -20,12 +20,18 @@ namespace TddbcCSharp.Vending
             get { return _totalAmount; }
         }
 
+        public int Insert(JapaneseMoney money)
+        {
+            if (!money.CanUse()) return money.Amount();
+            _totalAmount += money.Amount();
+            return 0;
+        }
+
         public int Insert(int amount)
         {
-            int[] invalidAmounts = new int[] { 1, 5, 10000, 123 };
-            if (invalidAmounts.Contains(amount)) return amount;
-            _totalAmount += amount;
-            return 0;
+            if (!Enum.IsDefined(typeof(JapaneseMoney), amount)) return amount;
+            JapaneseMoney money = (JapaneseMoney)Enum.ToObject(typeof(JapaneseMoney), amount);
+            return Insert(money);
         }
 
         public int PayBack()
