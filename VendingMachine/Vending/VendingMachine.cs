@@ -22,7 +22,7 @@ namespace TddbcCSharp.Vending
 
         public int Insert(int amount)
         {
-            int[] invalidAmounts = new int[] { 1, 5 };
+            int[] invalidAmounts = new int[] { 1, 5, 10000 };
             if (invalidAmounts.Contains(amount)) return amount;
             _totalAmount += amount;
             return 1;
