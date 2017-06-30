@@ -29,9 +29,8 @@ namespace TddbcCSharp.Vending
 
         public int Insert(int amount)
         {
-            if (!Enum.IsDefined(typeof(JapaneseMoney), amount)) return amount;
-            JapaneseMoney money = (JapaneseMoney)Enum.ToObject(typeof(JapaneseMoney), amount);
-            return Insert(money);
+            if (IsNotJapaneseMoney(amount)) return amount;
+            return Insert(ToManey(amount));
         }
 
         public int PayBack()
@@ -65,6 +64,17 @@ namespace TddbcCSharp.Vending
         {
             return _drinkKindAndStocks.CountStockOf(drinkKind);
         }
+
+        private bool IsNotJapaneseMoney(int amount)
+        {
+            return !Enum.IsDefined(typeof(JapaneseMoney), amount);
+        }
+
+        private JapaneseMoney ToManey(int amount)
+        {
+            return (JapaneseMoney)Enum.ToObject(typeof(JapaneseMoney), amount);
+        }
+
     }
 }
 
