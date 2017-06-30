@@ -77,7 +77,7 @@ namespace TddbcCSharp.Vending
 
         public bool CanBuy(string v)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }
