@@ -31,12 +31,13 @@
   <ItemGroup>
     <Compile Include="ChainingAssertion.NUnit.cs" />
     <Compile Include="Vending\VendingMachineTest.cs" />
+    <Compile Include="Vending\JapaneseMoneytEST.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\VendingMachine\VendingMachine.csproj">
       <Project>{1BB1593B-0104-4180-901B-D98F61F65A8E}</Project>
-      <Name>VendingMachineTest</Name>
+      <Name>VendingMachine</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
