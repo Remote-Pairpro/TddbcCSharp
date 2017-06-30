@@ -144,6 +144,13 @@ namespace TddbcCSharp.Vending
             Assert.That(actual, Is.EqualTo(5));
         }
 
+        [Test]
+        public void 五円玉を投入されたら総計に加算されない()
+        {
+            _sut.Insert(5);
+            Assert.That(_sut.TotalAmount, Is.EqualTo(0));
+        }
+
         // ---- Step2 (with Chaining Assertion) ----
 
         [Test]
