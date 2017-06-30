@@ -31,7 +31,7 @@
   <ItemGroup>
     <Compile Include="ChainingAssertion.NUnit.cs" />
     <Compile Include="Vending\VendingMachineTest.cs" />
-    <Compile Include="Vending\JapaneseMoneytEST.cs" />
+    <Compile Include="Vending\JapaneseMoneyTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
