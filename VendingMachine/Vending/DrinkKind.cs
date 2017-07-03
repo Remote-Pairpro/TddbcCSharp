@@ -7,25 +7,15 @@ namespace TddbcCSharp.Vending
 {
     public class DrinkKind
     {
-
-        private string _name;
-        private int _price;
-
         public DrinkKind(string name, int price)
         {
-            _name = name;
-            _price = price;
+            Name = name;
+            Price = price;
         }
 
-        public string Name
-        {
-            get { return this._name; }
-        }
+        public string Name { get; }
 
-        public int Price
-        {
-            get { return _price; }
-        }
+        public int Price { get; }
 
         public static DrinkKind By(string drinkName)
         {
@@ -34,15 +24,15 @@ namespace TddbcCSharp.Vending
 
         public override bool Equals(Object obj)
         {
-            if (obj == null || !(obj is DrinkKind))
+            if (!(obj is DrinkKind))
                 return false;
-            DrinkKind otherDrink = (DrinkKind)obj;
-            return this.Name == otherDrink.Name;
+            var otherDrink = (DrinkKind)obj;
+            return Name == otherDrink.Name;
         }
 
         public override int GetHashCode()
         {
-            return _name.GetHashCode();
+            return Name.GetHashCode();
         }
     }
 

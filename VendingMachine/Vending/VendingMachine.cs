@@ -6,43 +6,33 @@ namespace TddbcCSharp.Vending
 {
     public class VendingMachine
     {
-
-        private int _totalAmount = 0;
-        private int _saleAmount = 0;
         private readonly DrinkKindAndStocks _drinkKindAndStocks;
+
+        public int TotalAmount { get; private set; } = 0;
+
+        public int SaleAmount { get; private set; } = 0;
 
         public VendingMachine()
         {
             _drinkKindAndStocks = new DrinkKindAndStocks();
         }
 
-        public int TotalAmount
-        {
-            get { return _totalAmount; }
-        }
-
-        public int SaleAmount
-        {
-            get { return _saleAmount; }
-        }
-
         public int Insert(JapaneseMoney money)
         {
             if (!money.CanUse()) return money.Amount();
-            _totalAmount += money.Amount();
+            TotalAmount += money.Amount();
             return 0;
         }
 
         public int Insert(int amount)
         {
-            if (IsNotJapaneseMoney(amount)) return amount;
-            return Insert(ToManey(amount));
+            return IsNotJapaneseMoney(amount) ? amount : Insert(ToManey(amount));
         }
 
         public int PayBack()
         {
-            int lastTotal = _totalAmount;
-            _totalAmount = 0;
+            var lastTotal = TotalAmount;
+            TotalAmount = 0;
             return lastTotal;
         }
 
@@ -74,8 +64,8 @@ namespace TddbcCSharp.Vending
         public bool CanBuy(string drinkName)
         {
             if (!_drinkKindAndStocks.ExistsBy(drinkName)) return false;
-            DrinkKind drinkKind = _drinkKindAndStocks.Of(drinkName);
-            return drinkKind.Price < _totalAmount
+            var drinkKind = _drinkKindAndStocks.Of(drinkName);
+            return drinkKind.Price < TotalAmount
                 && CountStockOf(drinkKind) > 0;
         }
 
@@ -84,9 +74,9 @@ namespace TddbcCSharp.Vending
             if (!CanBuy(drinkName)) return false;
             DrinkKind drinkKind = _drinkKindAndStocks.Of(drinkName);
             _drinkKindAndStocks.PopStock(drinkKind);
-            int price = drinkKind.Price;
-            _totalAmount -= price;
-            _saleAmount += price;
+            var price = drinkKind.Price;
+            TotalAmount -= price;
+            SaleAmount += price;
             return true;
         }
 

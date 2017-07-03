@@ -18,7 +18,7 @@ namespace VendingMachine.Vending
 
     public static class JapaneseMoneySupport
     {
-        private static readonly List<JapaneseMoney> VALID_MOENY = new List<JapaneseMoney> {
+        private static readonly List<JapaneseMoney> ValidMoeny = new List<JapaneseMoney> {
             十円玉,
             五十円玉,
             百円玉,
@@ -28,7 +28,7 @@ namespace VendingMachine.Vending
 
         public static bool CanUse(this JapaneseMoney money)
         {
-            return VALID_MOENY.Contains(money);
+            return ValidMoeny.Contains(money);
         }
 
         public static int Amount(this JapaneseMoney money)

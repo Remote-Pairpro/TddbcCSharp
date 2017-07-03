@@ -10,10 +10,10 @@ namespace TddbcCSharp.Vending
 
         internal DrinkKindAndStocks()
         {
-            initStock();
+            InitStock();
         }
 
-        private void initStock()
+        private void InitStock()
         {
             _drinkKindAndStocks = new Dictionary<DrinkKind, int>();
             AddDrinkKind(new DrinkKind("コーラ", 120), 5);
